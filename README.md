@@ -2,10 +2,6 @@
 
 works with jre 10
 
-## requirements
-
-have folder ```dev-local/apache-tomcat-9.0.11```
-
 ## maven build
 
 ```
