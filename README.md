@@ -1,6 +1,6 @@
 # ebx docker wrapper around ebx-directory-oauth-google
 
-works with jre 10
+works with tomcat9 & jre 10
 
 ## maven build
 
