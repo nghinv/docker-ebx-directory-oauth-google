@@ -21,7 +21,7 @@ update your ebx.properties
 ebx.directory.factory=com.orchestranetworks.ps.customDirectory.OauthGoogleDirectoryFactory
 ```
 
-copy the jar to your tomcat/lib
+copy the jar to your tomcat/lib OR see docker build/run
 
 ## Docker build
 
@@ -32,7 +32,7 @@ source ~/.profile
 docker build -t ebx5.8.1-oauth-google .
 ```
 
-## run
+## Docker run
 
 ```
 docker run --rm -p 9090:8080 --mount type=volume,src=ebx-repository-h2-oauth2google,dst=/ebx-repository-h2 -e "CATALINA_OPTS=-DebxLicense=$EBXLICENSE" --name ebx581_oauth_google ebx5.8.1-oauth-google
@@ -40,7 +40,7 @@ docker run --rm -p 9090:8080 --mount type=volume,src=ebx-repository-h2-oauth2goo
 
 open your browser at ```http://localhost:9090/ebx```
 
-## connect to runnign container
+## connect to running container
 
 ```
 docker exec -it ebx581_oauth_google /bin/bash
