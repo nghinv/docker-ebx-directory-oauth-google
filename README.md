@@ -1,6 +1,6 @@
 # ebx docker wrapper around ebx-directory-oauth-google
 
-works with jdk 1.8
+works with jre 10
 
 ## requirements
 
