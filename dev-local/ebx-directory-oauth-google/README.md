@@ -1,6 +1,6 @@
 # ebx-directory-oauth-google
 
-works with jdk 1.8
+works with jdk 1.8 and ebx 5.8.1.1067
 
 ## build
 
