@@ -2,6 +2,12 @@
 
 works with tomcat9 & jre 10
 
+## requirement
+
+```
+docker pull 316054198708.dkr.ecr.us-east-1.amazonaws.com/ebx:5.8.1.1067-0027
+```
+
 ## maven build
 
 ```

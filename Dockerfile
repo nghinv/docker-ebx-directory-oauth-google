@@ -29,21 +29,21 @@ COPY context/ebx.xml ${CATALINA_HOME}/conf/Catalina/localhost/ebx.xml
 ENV EBX_HOME /ebx-repository-h2
 RUN mkdir -p ${EBX_HOME}
 
-COPY ebx/ebx_CD_5.8.1.1067-0027/ebx.software/lib/ebx.jar $CATALINA_HOME/lib/
-COPY ebx/ebx_CD_5.8.1.1067-0027/ebx.software/lib/lib-h2/h2-1.3.170.jar $CATALINA_HOME/lib/
+COPY --from=316054198708.dkr.ecr.us-east-1.amazonaws.com/ebx:5.8.1.1067-0027 /data/ebx/ebx.software/lib/ebx.jar $CATALINA_HOME/lib/
+COPY --from=316054198708.dkr.ecr.us-east-1.amazonaws.com/ebx:5.8.1.1067-0027 /data/ebx/ebx.software/lib/lib-h2/h2-1.3.170.jar $CATALINA_HOME/lib/
 
-COPY ebx/third_party_libs/activation-1.1.1.jar $CATALINA_HOME/lib/
-COPY ebx/third_party_libs/google-http-client-1.24.1.jar $CATALINA_HOME/lib/
-COPY ebx/third_party_libs/google-http-client-jackson2-1.24.1.jar $CATALINA_HOME/lib/
-COPY ebx/third_party_libs/javax.mail-api-1.4.7.jar $CATALINA_HOME/lib/
-COPY ebx/third_party_libs/slf4j-api-1.7.25.jar $CATALINA_HOME/lib/
-COPY ebx/third_party_libs/slf4j-simple-1.7.25.jar $CATALINA_HOME/lib/
+# COPY ebx/third_party_libs/activation-1.1.1.jar $CATALINA_HOME/lib/
+COPY dev-local/third_party_libs/javax.mail-api-1.4.7.jar $CATALINA_HOME/lib/
+COPY dev-local/third_party_libs/google-http-client-1.24.1.jar $CATALINA_HOME/lib/
+COPY dev-local/third_party_libs/google-http-client-jackson2-1.24.1.jar $CATALINA_HOME/lib/
+COPY dev-local/third_party_libs/slf4j-api-1.7.25.jar $CATALINA_HOME/lib/
+COPY dev-local/third_party_libs/slf4j-simple-1.7.25.jar $CATALINA_HOME/lib/
 
-COPY ebx/ebx_CD_5.8.1.1067-0027/ebx.software/webapps/wars-packaging/ebx.war $CATALINA_HOME/webapps/
-COPY ebx/ebx_CD_5.8.1.1067-0027/ebx.software/webapps/wars-packaging/ebx-root-1.0.war $CATALINA_HOME/webapps/
-COPY ebx/ebx_CD_5.8.1.1067-0027/ebx.software/webapps/wars-packaging/ebx-manager.war $CATALINA_HOME/webapps/
-COPY ebx/ebx_CD_5.8.1.1067-0027/ebx.software/webapps/wars-packaging/ebx-dma.war $CATALINA_HOME/webapps/
-COPY ebx/ebx_CD_5.8.1.1067-0027/ebx.software/webapps/wars-packaging/ebx-dataservices.war $CATALINA_HOME/webapps/
+COPY --from=316054198708.dkr.ecr.us-east-1.amazonaws.com/ebx:5.8.1.1067-0027 /data/ebx/ebx.software/webapps/wars-packaging/ebx.war $CATALINA_HOME/webapps/
+COPY --from=316054198708.dkr.ecr.us-east-1.amazonaws.com/ebx:5.8.1.1067-0027 /data/ebx/ebx.software/webapps/wars-packaging/ebx-root-1.0.war $CATALINA_HOME/webapps/
+COPY --from=316054198708.dkr.ecr.us-east-1.amazonaws.com/ebx:5.8.1.1067-0027 /data/ebx/ebx.software/webapps/wars-packaging/ebx-manager.war $CATALINA_HOME/webapps/
+COPY --from=316054198708.dkr.ecr.us-east-1.amazonaws.com/ebx:5.8.1.1067-0027 /data/ebx/ebx.software/webapps/wars-packaging/ebx-dma.war $CATALINA_HOME/webapps/
+COPY --from=316054198708.dkr.ecr.us-east-1.amazonaws.com/ebx:5.8.1.1067-0027 /data/ebx/ebx.software/webapps/wars-packaging/ebx-dataservices.war $CATALINA_HOME/webapps/
 
 ### PROJECT
 COPY ebx.properties ${EBX_HOME}/ebx.properties

@@ -1,3 +1,4 @@
 .DS_Store
-dev-local
+dev-local/apache-tomcat*
+dev-local/ebx-directory-oauth*
 .git
