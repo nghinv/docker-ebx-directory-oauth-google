@@ -37,7 +37,7 @@ docker build -t ebx5.8.1-oauth-google .
 ## Docker run
 
 ```
-docker run --rm -p 9090:8080 --mount type=volume,src=ebx-repository-h2-oauth2google,dst=/ebx-repository-h2 -e "CATALINA_OPTS=-DebxLicense=$EBXLICENSE" --name ebx581_oauth_google ebx5.8.1-oauth-google
+docker run --rm -p 9090:8080 --mount type=volume,src=ebx-repository-h2-oauth2google,dst=/ebx-repository-h2 -e "CATALINA_OPTS=-DebxLicense=$EBXLICENSE" --name ebx581-oauth-google ebx5.8.1-oauth-google
 ```
 
 open your browser at ```http://localhost:9090/ebx```
@@ -45,7 +45,7 @@ open your browser at ```http://localhost:9090/ebx```
 ## connect to running container
 
 ```
-docker exec -it ebx581_oauth_google /bin/bash
+docker exec -it ebx581-oauth-google /bin/bash
 ```
 
 ## POSTMAN test REST
